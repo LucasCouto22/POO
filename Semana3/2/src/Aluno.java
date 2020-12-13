@@ -24,19 +24,19 @@ public class Aluno{
 
     public String cr(){
 
-        float notaSoma;
-        int count;
-        float notaFinal;
+        float notaTotal;
+        int contador;
+        float notaFim;
 
         for(int i : this.historico) {  
             
-            notaSoma = notaSoma + this.historico[i];
-            count = count + 1;
+            notaTotal = notaTotal + this.historico[i];
+            contador = contador + 1;
         }  
 
-        notaFinal = notaSoma / count;
+        notaFim = notaTotal / contador;
 
-        return notaFinal; 
+        return notaFim; 
     }
 
 }
