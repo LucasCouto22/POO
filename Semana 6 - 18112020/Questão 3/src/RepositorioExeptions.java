@@ -1,6 +1,9 @@
 public class RepositorioExeptions extends RuntimeException {
-    public RepositorioExeptions(String msg) {
-        super(msg);
+    
+    public RepositorioExeptions(String mensagem) {
+        
+        super(mensagem);
+        
     }
 
 }
