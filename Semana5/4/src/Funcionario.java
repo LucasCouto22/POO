@@ -1,5 +1,7 @@
 abstract class Funcionario {
-    public float SalarioBase;
+    
+    public float salarioBase;
 
     abstract double pagarFuncionario();
+    
 }
