@@ -1,36 +1,38 @@
 public class Primos extends Thread{
-    private int inicio;
-    private int fim;
-    private int quantidade = 0;
-    public Primos(int inicio, int fim){
-        this.inicio = inicio;
-        this.fim = fim;
+    
+    private int comeco;
+    private int termino;
+    private int quant = 0;
+    
+    public Primos(int comeco, int termino){
+        this.comeco = comeco;
+        this.termino = termino;
     }
 
-    public void setInicio(int inicio){
-        this.inicio = inicio;
+    public void setComeco(int comeco){
+        this.comeco = comeco;
     }
 
-    public int getInicio(){
-        return this.inicio;
+    public int getComeco(){
+        return this.comeco;
     }
 
-    public void setFim(int fim){
-        this.fim = fim;
+    public void setTermino(int termino){
+        this.termino = termino;
     }
 
-    public int getFim(){
-        return this.fim;
+    public int getTermino(){
+        return this.termino;
     }
 
     public int getQuantidade(){
-        return this.quantidade;
+        return this.quant;
     }
     public void run(){
         int quantidade = 0;
-        for(int i = this.inicio ; i <= this.fim; i++){
+        for(int i = this.comeco ; i <= this.termino; i++){
             int divisores = 0;
-            for(int divisor = 2; divisor < this.fim; divisor++){
+            for(int divisor = 2; divisor < this.termino; divisor++){
                 if(divisor != i){
                     if(i%divisor == 0){
                         divisores++;
@@ -38,9 +40,9 @@ public class Primos extends Thread{
                 }
             }
             if(divisores == 0){
-             quantidade++;
+             quant++;
             }
         }
-        this.quantidade = quantidade;
+        this.quant = quant;
     }
 }
