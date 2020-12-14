@@ -1,32 +1,54 @@
 public class CounterThread extends Thread {
-    private int id;
+    private int carimbo;
     Counter counter;
 
-    public CounterThread(int id, Counter counter) {
-        this.id = id;
+    public CounterThread(int carimbo, Counter counter) {
+        this.carimbo = carimbo;
         this.counter = counter;
     }
 
     public void run() {
-        if (this.id == 1) {
+        
+        if (this.carimbo == 1) {
+            
             for (int i = 0; i < 20; i++) {
+                
                 counter.increment();
+                
                 try {
+                    
                     Thread.sleep((long) (Math.random() * 500));
+                    
                 } catch (InterruptedException e) {
+                    
                     e.printStackTrace();
+                    
                 }
+                
             }
-        } else {
+            
+        } 
+        else {
+            
             for (int i = 0; i < 20; i++) {
+                
                 counter.decrement();
+                
                 try {
+                    
                     Thread.sleep((long) (Math.random() * 500));
+                    
                 } catch (InterruptedException e) {
+                    
                     e.printStackTrace();
+                    
                 }
+                
             }
+            
         }
+        
     }
+    
 }
 
