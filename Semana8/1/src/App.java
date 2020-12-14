@@ -4,27 +4,32 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class App {
+	
     public static void main(String[] args) throws Exception {
+	    
         Scanner teclado = new Scanner(System.in);
-        String frase = teclado.next();
+        String frase = teclado.nextLine();
         ArrayList<String> array = new ArrayList<String>();
-        for(String palavra : frase.split(";")){
-            array.add(palavra);
+	    
+        for(String termo : frase.split(";")){
+            array.add(termo);
         }
-        Map<String,Integer> mapPalavras = new HashMap<String,Integer>();
+	    
+        Map<String,Integer> mapTermo = new HashMap<String,Integer>();
     
-        for(String palavra : array){
-            Integer freq = mapPalavras.get(palavra);
+        for(String termo : array){
+		
+            Integer freq = mapTermo.get(termo);
 
             if(freq != null){
-                mapPalavras.put(palavra, freq+1);
+                mapTermo.put(termo, freq+1);
             }else {
-                mapPalavras.put(palavra,1);
-			}
+                mapTermo.put(termo,1);
+	    }
         }
 
         teclado.close();
-        for (Map.Entry<String, Integer> entry : mapPalavras.entrySet()) {
+        for (Map.Entry<String, Integer> entry : mapTermo.entrySet()) {
             System.out.println(entry.getKey() + "\tfreq=" + entry.getValue());
          }
     }
