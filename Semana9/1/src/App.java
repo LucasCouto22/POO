@@ -6,11 +6,11 @@ public class App {
         
         Scanner teclado = new Scanner(System.in);
         int num = teclado.nextInt();
-        int metadeInferior = num/2;
-        Primos numerosPrimos = new Primos(2, metadeInferior);
-        Primos primosNumeros = new Primos(metadeInferior + 1, num);
-        primos.start();
-        primos2.start();
+        int metadePrimeira = num/2;
+        Primos numerosPrimos = new Primos(2, metadePrimeira);
+        Primos primosNumeros = new Primos(metadePrimeira + 1, num);
+        numerosPrimos.start();
+        primosNumeros.start();
         
         try{
             
