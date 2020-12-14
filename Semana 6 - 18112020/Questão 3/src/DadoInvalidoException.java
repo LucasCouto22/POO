@@ -1,6 +1,9 @@
 public class DadoInvalidoException extends RuntimeException {
-    public DadoInvalidoException(String msg) {
-        super(msg);
+    
+    public DadoInvalidoException(String mensagem) {
+        
+        super(mensagem);
+        
     }
 
 }
