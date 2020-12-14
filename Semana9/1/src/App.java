@@ -1,27 +1,41 @@
 import java.util.Scanner;
 
 public class App {
+    
     public static void main(String[] args) throws Exception {
+        
         Scanner teclado = new Scanner(System.in);
-        int numero = teclado.nextInt();
-        int metadeInferior = numero/2;
-        Primos primos = new Primos(2, metadeInferior);
-        Primos primos2 = new Primos(metadeInferior + 1, numero);
+        int num = teclado.nextInt();
+        int metadeInferior = num/2;
+        Primos numerosPrimos = new Primos(2, metadeInferior);
+        Primos primosNumeros = new Primos(metadeInferior + 1, num);
         primos.start();
         primos2.start();
+        
         try{
-            primos.join();
+            
+            numerosPrimos.join();
+            
         }catch(InterruptedException err){
+            
             err.printStackTrace();
+            
         }
         try{
-            primos2.join();
+            
+            primosNumeros.join();
+            
         }catch(InterruptedException err){
+            
             err.printStackTrace();
+            
         }
-        int quantidade = 0;
-        quantidade = primos.getQuantidade() + primos2.getQuantidade();
-        System.out.println(quantidade);
+        
+        int quant = 0;
+        quant = numerosPrimos.getQuantidade() + primosNumeros.getQuantidade();
+        System.out.println(quant);
         teclado.close();
+        
     }
+    
 }
